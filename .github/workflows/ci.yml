@@ -27,5 +27,20 @@ jobs:
 
       - name: Exit
         run: (exit 0)
+  style:
+    name: syle
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Set up Go
+        uses: actions/setup-go@v4
+        with:
+          go-version: "1.20"
+
+      - name: check out code
+        uses: actions/checkout@v3
+
+      - name: fix fmt
+        run: test -z $(go fmt ./...)
 
 
