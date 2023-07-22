@@ -43,4 +43,7 @@ jobs:
       - name: fix fmt
         run: test -z $(go fmt ./...)
 
+      - name: Exit
+        run: (exit 0)
+
 
