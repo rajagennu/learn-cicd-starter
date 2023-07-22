@@ -23,7 +23,7 @@ jobs:
         run: go version
 
       - name: run go tests
-        run: go test ./...
+        run: go test ./... -cover
 
       - name: Exit
         run: (exit 0)
