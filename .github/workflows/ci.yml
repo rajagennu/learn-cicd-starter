@@ -47,7 +47,9 @@ jobs:
         run:  go install honnef.co/go/tools/cmd/staticcheck@latest
 
       - name: run staticheck
-        run:  $GOPATH/bin/staticcheck ./...
+        run:  |
+            export PATH=${PATH}:`go env GOPATH`/bin
+            staticcheck ./...
     
 
 
